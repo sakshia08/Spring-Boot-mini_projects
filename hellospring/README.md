@@ -62,5 +62,43 @@ HelloSpring 🍃
 
 | `/page?name=Sakshi` | GET | Renders an HTML page with Thymeleaf |
 
+---
 
+\## Extra Notes
+- A Controller is like the middleman — it receives the request, talks to the code, and sends back a response.
+- In spring boot controller class contains methods that can handle web requests. Can control what happens when someone visits certain endpoints.
 
+- Controller - show HTML pages. Use it with Thymeleaf or JSP templates.
+- RestController - return data and not HTML pages -> perfect for APIs.
+- Responsebody in the restcontroller tells spring to not try and render a page just return it as-is to browser or postman.
+
+- Servlet - Java class that handles web requests/responses - listens for a request, processes it and returns a response.
+- Every request is first transferred to servlet.
+- DispatcherServlet - Spring's main servlet — routes all requests.
+- Tomcat - Java based web server - container of servlets - triggers them -> Listens to HTTP requests, runs servlets, sends responses - embedded automatically in springboot.
+- Default port = 8080 but can be changed in application.properties.
+
+- Flow of Request
+1. Browser/Postman sends a request (e.g., /api/user)
+
+2. Tomcat Server (inside Spring Boot) receives it
+
+3. DispatcherServlet is triggered (default servlet)
+
+4. It checks:
+   - Is there a matching controller? 
+   - Is it a GET or POST? 
+   - Any path variables?
+
+5. It finds the right controller and method
+   - e.g., @PostMapping("/api/user")
+
+6. Spring calls that method and gets a result
+   - Maybe a string or a User object
+
+7. DispatcherServlet wraps the result
+   - Adds headers, content-type, status code
+
+8. Sends the response back to the browser/Postman
+
+- The DispatcherServlet is automatically registered when you run any Spring Boot app.
