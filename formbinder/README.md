@@ -62,4 +62,24 @@ This project focuses on:
 - Always use @RequestBody with POST methods expecting full JSON objects.
 - Use ResponseEntity.ok("message") for clean, HTTP 200-style responses.
 
+---
 
+@GetMapping	-> Handle HTTP GET requests	-> when you want to - Read or fetch data (no changes) - ex: view profile
+@PostMapping	-> Handle HTTP POST requests	-> when you want to - Send or create data (causes a change) - ex: register a user
+
+Use @GetMapping when:
+- You want to retrieve information
+- The request doesn’t change anything
+- You’re just reading from the server
+
+Use @PostMapping when:
+- You’re sending data to the server
+- You want to create, update, or submit something
+- The request modifies data or state
+
+Why we used postmapping in formbinder? We were sending JSON data (name, dob) from Postman to the server.
+The server was supposed to read that data and process it - exactly what post is for.
+
+If we used getmapping instead -
+- Can't pass a body in a GET request — so no JSON
+- Forced to pass everything in the URL: /user?name=Sakshi&dob=2000-07-03 -> messy, insecure and not RESTful.
