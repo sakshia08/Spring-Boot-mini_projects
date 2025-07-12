@@ -35,7 +35,7 @@ greeting.name=Sakshi
 - Spring loads (message = "Hello there,"; name = "Sakshi")
 - These are injected into the fields of AppConfig using @Value
 
-### Flow
+### Flow 
 1. application.properties ➝ values loaded
 
 2. AppConfig.java        ➝ @Bean method uses values 
@@ -60,7 +60,7 @@ greeting.name=Sakshi
 
 ---
 
-## Flow of Execution
+## Flow of Execution - Component vs Bean
 ### With Bean
 application.properties ➝ @Value injected into AppConfig\
 ↓\
