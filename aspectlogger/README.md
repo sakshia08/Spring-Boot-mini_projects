@@ -7,8 +7,8 @@ A Spring Boot project demonstrating Spring AOP (Aspect-Oriented Programming) to 
 
 Annotation	Purpose
 
-- @Aspect	- Marks a class as an Aspect (cross-cutting concern logic).
-- @Pointcut - Defines where the aspect should run (e.g., all methods in a package).
+- @Aspect	- Marks a class as an Aspect - tells spring boot that this contains certain methods that might require interception which might need to be executed before or after certain methods.
+- @Pointcut - expression that defines where the advice should be applied. (e.g., all methods in a package). - Advice = annotation(@before or after) together with the method.
 - @Before	- Runs before the matched method executes.
 - @After	- Runs after the matched method executes (always runs, even if exception occurs).
 - @AfterReturning	- Runs after method returns successfully. Can capture return values.
@@ -59,3 +59,11 @@ Annotation	Purpose
 - Must have spring-boot-starter-aop dependency, otherwise AspectJ annotations won’t be recognized.
 
 - Package scanning must include the Aspect class (same or sub-package of @SpringBootApplication class).
+
+---
+
+### ⚙️ Dependencies
+
+spring-boot-starter-web → REST APIs
+
+spring-boot-starter-aop → AOP/AspectJ support
